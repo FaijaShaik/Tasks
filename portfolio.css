@@ -1,0 +1,55 @@
+*
+{
+  background-color: hsl(33, 89%, 89%);
+}
+.name{
+  color: blueviolet;
+  text-decoration: wavy;
+  font-family:cursive
+}
+.img
+{
+  height: 200px;
+  width: 200px;
+}
+.whatami
+{
+  color: #2090b6e0;
+  text-decoration: dotted;
+  font-family: sans-serif;
+}
+#div1
+{
+  text-align: justify;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: dimgray;
+
+}
+h2{
+  color: darkgreen;
+}
+#table
+{
+  width: 300px;
+  text-align: left;
+}
+th{
+  color: darkblue;
+}
+td{
+  color: rgb(151, 12, 151);
+}
+
+table,td,tr,th{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5rem
+}
+
+#skills
+{
+  color: rgb(129, 93, 3);
+}
+ol{
+  text-align: left;
+}
