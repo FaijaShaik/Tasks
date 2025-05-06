@@ -1,1 +1,43 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyN6o0Ga6r85ajyNrom/JsYa"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":16,"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"pJCt9fICGyid","executionInfo":{"status":"ok","timestamp":1746513654561,"user_tz":-330,"elapsed":7786,"user":{"displayName":"shaik","userId":"07053611863989594034"}},"outputId":"461d3d18-607b-4bdb-f742-b3a9f0982d50"},"outputs":[{"name":"stdout","output_type":"stream","text":["available pets:\n","id: 4060\n","name:bela, species:dog, age:3\n","breed:brownie, color:brown,pref:('bones', 'walk')\n","enter petid to adopt:4061\n"]}],"source":["import random\n","\n","class Pet:\n","  def __init__(self,name,species,age):\n","    self.name=name\n","    self.species=species\n","    self.age=age\n","  def display_info(self):\n","    print(f\"name:{self.name}, species:{self.species}, age:{self.age}\")\n","\n","class Dog(Pet):\n","  def __init__(self,name,age,breed,color):\n","    super().__init__(name,\"dog\",age)\n","    self.breed=breed\n","    self.color=color\n","    self.pref=(\"bones\",\"walk\")\n","  def display_info(self):\n","    super().display_info()\n","    print(f\"breed:{self.breed}, color:{self.color},pref:{self.pref}\")\n","\n","class Cat(Pet):\n","   def __init__(self,name,age,breed,color):\n","    super().__init__(name,\"cat\",age)\n","    self.breed=breed\n","    self.color=color\n","    self.pref=(\"fish\",\"run\")\n","   def display_info(self):\n","    super().display_info()\n","    print(f\"breed:{self.breed}, color:{self.color}, pref:{self.pref}\")\n","pets={}\n","d=Dog(\"bela\",3,\"brownie\",\"brown\")\n","pid=random.randint(1000,9000)\n","pets[pid]=d\n","print(\"available pets:\")\n","for i,p in pets.items():\n","  print(\"id:\",i)\n","  p.display_info()\n","\n","aid=int(input(\"enter petid to adopt:\"))\n","if aid in pets:\n","  print(\"you adopted:\")\n","  pets[aid].display_info()\n","  del pets[aid]\n","\n"]}]}
+import random
+
+class Pet:
+  def __init__(self,name,species,age):
+    self.name=name
+    self.species=species
+    self.age=age
+  def display_info(self):
+    print(f"name:{self.name}, species:{self.species}, age:{self.age}")
+ 
+class Dog(Pet):
+  def __init__(self,name,age,breed,color):
+    super().__init__(name,"dog",age)
+    self.breed=breed
+    self.color=color
+    self.pref=("bones","walk")
+  def display_info(self):
+    super().display_info()
+    print(f"breed:{self.breed}, color:{self.color},pref:{self.pref}")
+
+class Cat(Pet):
+   def __init__(self,name,age,breed,color):
+    super().__init__(name,"cat",age)
+    self.breed=breed
+    self.color=color
+    self.pref=("fish","run")
+   def display_info(self):
+    super().display_info()
+    print(f"breed:{self.breed}, color:{self.color}, pref:{self.pref}")
+pets={}
+d=Dog("bela",3,"brownie","brown")
+pid=random.randint(1000,9000)
+pets[pid]=d
+print("available pets:")
+for i,p in pets.items():
+  print("id:",i)
+  p.display_info()
+
+aid=int(input("enter petid to adopt:"))
+if aid in pets:
+  print("you adopted:")
+  pets[aid].display_info()
+  del pets[aid]
